@@ -41,7 +41,6 @@ export class App {
     this.QuizBuilderVisible = quizBuilder
     this.QuizAppVisible = quizApp
     this.RegistrationAppVisible = registrationApp
-    console.log("worked!")
   }
 }
 
