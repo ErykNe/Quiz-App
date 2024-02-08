@@ -7,6 +7,8 @@ main {
 }
 
 .container {
+  display: flex;
+  justify-content: space-between;
   background-color: white;
   position: fixed;
   top: 0;
@@ -18,7 +20,9 @@ main {
   box-shadow: 0 0 8px 0 rgba(75, 75, 75, 0.735);
 }
 .navbar-nav {
+  float: left;
   border-left: 1px solid rgb(215, 215, 215);
+  border-right: 1px solid rgb(215, 215, 215);
   margin-left: 20px;
 }
 .active {
@@ -61,7 +65,9 @@ a {
   margin-right: 10px;
 }
 .navbar-btn {
+  float: right;
   margin-left: 10px;
+  margin-right: 20px;
   padding: 12px;
   padding-left: 20px;
   padding-right: 20px;
