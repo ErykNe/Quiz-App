@@ -12,16 +12,26 @@
           <a class="navbar-brand" href="#">QuizApp</a>
         </div>
         <ul class="navbar-nav">
-          <li class="active"><a href="main.html">Home</a></li>
-          <li class="active"><a href="quiz.builder.html">Make a quiz</a></li>
-          <li class="active"><a href="quiz.app.html">Take a quiz</a></li>
+          <li class="active"><a (click)="showHome()">Home</a></li>
+          <li class="active"><a (click)="showQuizBuilder()">Make a quiz</a></li>
+          <li class="active"><a (click)="showQuizApp()">Take a quiz</a></li>
         </ul>
-        <button class="navbar-btn">Sign in</button>
+        <button class="navbar-btn" (click)="showRegistrationApp()">Sign in</button>
       </div>
     </nav>
-    <div>
-       <quiz-component></quiz-component>
-    </div>  
-    <br>
+    <div class="main-page">
+      <div *ngIf="HomeVisible">
+        <app-homepage></app-homepage>
+      </div>
+      <div *ngIf="QuizBuilderVisible">
+        <app-quizapp></app-quizapp>
+      </div>  
+      <div *ngIf="QuizAppVisible">
+         <app-quizbuilder></app-quizbuilder>
+      </div>  
+      <div *ngIf="RegistrationAppVisible">
+        <app-registrationapp></app-registrationapp>
+      </div>
+    </div>
   </body>
 </html>

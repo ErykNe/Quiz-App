@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormControl } from "@angular/forms";
 
 @Component({
-  selector: 'quiz-component',
+  selector: 'app-quizapp',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css'],
   standalone: true,
