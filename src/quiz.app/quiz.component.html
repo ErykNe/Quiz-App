@@ -1,0 +1,11 @@
+<form style="text-align: center;">
+  <div *ngFor="let question of questions; index as i">
+    <p>{{question.title}}</p>
+       <div *ngFor="let answer of question.answers">
+        <input type ="radio" name = {{i}} (click)="assignData(answer)">{{answer}}<br>
+       </div> 
+    <br>   
+  </div>
+</form>
+<button (click)="showScore()">Zatwierdź</button>
+<p *ngIf="score != -1">Twoj wynik: {{score}}/4</p>
