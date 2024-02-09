@@ -3,20 +3,25 @@
   <head>
     <title>My app</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="global_styles.css">
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar">
+    <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand">QuizApp</a>
         </div>
-        <ul class="navbar-nav">
-          <li class="active"><a (click)="showHome()">Home</a></li>
-          <li class="active"><a (click)="showQuizBuilder()">Make a quiz</a></li>
-          <li class="active"><a (click)="showQuizApp()">Take a quiz</a></li>
-        </ul>
-        <button class="navbar-btn" (click)="showRegistrationApp()">SIGN IN</button>
+          <a class="navbar-brand" (click)="showHome()">Home</a>
+          <a class="navbar-brand" (click)="showQuizBuilder()">Make a quiz</a>
+          <a class="navbar-brand" (click)="showQuizApp()">Take a quiz</a>
+          <a class="btn btn-primary" (click)="showRegistrationApp()">SIGN IN</a>
       </div>
     </nav>
     <div class="main-page">
@@ -33,5 +38,6 @@
         <app-registrationapp></app-registrationapp>
       </div>
     </div>
+    <script src="js/scripts.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
