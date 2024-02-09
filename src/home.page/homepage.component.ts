@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-homepage',
   standalone: true,
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.css', './css/styles.css']
 })
 export class HomepageComponent implements OnInit {
 
