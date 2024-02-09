@@ -33,6 +33,7 @@ export class QuizComponent implements OnInit {
   }
   showScore(){
     let a = 0;
+    this.score++;
     this.userAnswers.forEach((answer) =>{
       if(this.questions[a].answers.findIndex(elem => elem == answer) == this.questions[a].index_correct){
         this.score++;
