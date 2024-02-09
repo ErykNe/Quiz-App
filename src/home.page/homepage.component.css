@@ -1,4 +1,4 @@
-p {
+.homepage {
     animation: moveInBottom 0.7s ease-out;
 }
 @keyframes moveInBottom {
