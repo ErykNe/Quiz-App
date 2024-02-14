@@ -1,5 +1,41 @@
-.homepage {
+.homepage1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 350px;
+    background: linear-gradient(
+        to right top, 
+        rgb(158, 185, 245) 0%, 
+        rgb(158, 185, 245) 50%, 
+        rgb(216, 218, 255) 50%, 
+        rgb(158, 185, 245) 50%, 
+        rgb(216, 218, 255) 100%);
+    box-shadow: 0 0 4px 0 rgba(75, 75, 75, 0.735);    
+}
+.homepage2 {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 180px;
+    background-color: #F4F8FB;
+}
+.title {
     animation: moveInBottom 0.7s ease-out;
+    color: white;
+    font-weight: 400;
+}
+.content {
+    animation: moveInBottom 0.7s ease-out;
+    color: gray;
+    font-weight: 200;
+}
+.icon {
+    animation: moveInBottom 0.7s ease-out;
+    margin-left: -20px;
 }
 @keyframes moveInBottom {
     0% {
