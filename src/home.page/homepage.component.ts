@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import JSONdata from './data.json';
 
 @Component({
   selector: 'app-homepage',
@@ -12,5 +13,6 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  title: string = JSONdata.title
+  text: string = " " + JSONdata.text
 }

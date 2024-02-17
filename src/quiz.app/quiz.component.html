@@ -1,12 +1,20 @@
-<form style="text-align: center;">
-  <div *ngFor="let question of questions; index as i">
-    <p>{{question.title}}</p>
-       <div *ngFor="let answer of question.answers">
-        <input type ="radio" name = {{i}} (click)="assignData(answer)">{{answer}}<br>
-       </div> 
-    <br>   
-  </div>
-</form>
-<button (click)="showScore()">Zatwierdź</button>
-<p *ngIf="score != -1">Twoj wynik: {{score}}<a>/4</a></p>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div>
+  <div class ="row">
+    <div class="col homepage2" *ngIf="!quizCompleted">
+      <form #form>
+          <p>{{questions[i].title}}</p>
+             <div *ngFor="let answer of questions[i].answers">
+              <input type ="radio" name = {{questions[i].index_question}} (click)="assignData(answer)">
+              <span [ngClass]="{'correct-answer': questions[i].answers.indexOf(answer) === questions[i].index_correct && confirmed}">
+               {{answer}}
+              </span>
+             </div> 
+          <br>   
+      </form>
+      <button *ngIf="!confirmed && !quizCompleted" (click)="confirmAnswer()">Confirm</button>
+      <button *ngIf="confirmed && !quizCompleted" (click)="goNext(form)">Next Question</button>
+   </div>
+   <div *ngIf="quizCompleted" class="col homepage2">
+      <p>Your score is: {{score}}/{{questions.length}}</p>
+   </div>
+</div>

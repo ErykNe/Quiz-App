@@ -1,0 +1,19 @@
+.homepage2 {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 20%;
+    padding-bottom: 19vw;
+    padding-left: 400px;
+    padding-right: 400px;
+    background-color: #F4F8FB;
+    font-size: 40px;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.correct-answer {
+    color: green;
+  }
