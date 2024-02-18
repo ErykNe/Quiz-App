@@ -1,0 +1,51 @@
+.homepage1 {
+    display: flex;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background:white
+}
+* {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    animation: moveInBottom 0.7s ease-out;
+}
+.container {
+    border: 1px solid rgb(215, 215, 215);
+}
+.display-5, .display-6{
+    margin-left: -6px;
+    margin-bottom: 25px;
+}
+.quizname{
+    margin-bottom: 25px;
+}
+.answersStyle {
+    margin-top: 20px;
+}
+div {
+    padding-bottom: 20px;
+}
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
