@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import quizzes_data from '../quiz.app/quiz.json';
 
 @Component({
   selector: 'app-quizbuilder',
@@ -11,6 +12,7 @@ export class QuizbuilderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
