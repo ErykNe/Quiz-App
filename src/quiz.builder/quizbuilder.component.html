@@ -1,28 +1,32 @@
-<div class="row">
-  <div class="container col homepage1"> 
-    <div class="display-5">Quiz Builder</div>
-    <div class="display-7 quizesAvailable">Quiz name:</div> 
-    <input class="quizname" type="text" [(ngModel)]="quizName">
-    <p class="display-6 quizesAvailable">Questions:</p>
-    <div class="question" *ngFor="let question of questions; let i = index; trackBy: trackByFn">
-      <p>Question Title:</p>
-      <input type="text" [(ngModel)]="question.title">
-      <p class="answersStyle">Answers:</p>
-      <div class="answers" *ngFor="let answer of question.text; let j = index; trackBy: trackByFn">
+<div class="body">
+  <div class="container">
+    <div class="row">
+      <div class="container col homepage1"> 
+        <div class="display-5">Quiz Builder</div>
+        <div class="display-7 quizesAvailable">Quiz name:</div> 
+        <input class="quizname" type="text" [(ngModel)]="quizName">
+        <p class="display-6 quizesAvailable">Questions:</p>
+        <div class="question" *ngFor="let question of questions; let i = index; trackBy: trackByFn">
+          <p>Question Title:</p>
+          <input type="text" [(ngModel)]="question.title">
+          <p class="answersStyle">Answers:</p>
+          <div class="answers" *ngFor="let answer of question.text; let j = index; trackBy: trackByFn">
+            <div class="btn-group">
+              <input type="radio" name="{{i}}" (click)="this.questions[i].index_correct.push(j)">
+              <input type="text" [(ngModel)]="questions[i].text[j]">
+              <button class="btn btn-primary" (click)="removeAnswer(i, j)">Remove Answer</button> 
+            </div>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-primary" (click)="addAnswer(i)">Add Answer</button>
+            <button class="btn btn-primary" (click)="removeQuestion(i)">Remove Question</button>
+          </div>
+        </div>
         <div class="btn-group">
-          <input type="radio" name="{{i}}" (click)="this.questions[i].index_correct.push(j)">
-          <input type="text" [(ngModel)]="questions[i].text[j]">
-          <button class="btn btn-primary" (click)="removeAnswer(i, j)">Remove Answer</button> 
+          <button class="btn btn-primary" (click)="addQuestion()">Add Question</button>
+          <button class="btn btn-primary" *ngIf="questions.length > 3" (click)="assignDataToJSON()">Make Quiz</button>
         </div>
       </div>
-      <div class="btn-group">
-        <button class="btn btn-primary" (click)="addAnswer(i)">Add Answer</button>
-        <button class="btn btn-primary" (click)="removeQuestion(i)">Remove Question</button>
-      </div>
-    </div>
-    <div class="btn-group">
-      <button class="btn btn-primary" (click)="addQuestion()">Add Question</button>
-      <button class="btn btn-primary" *ngIf="questions.length > 3" (click)="assignDataToJSON()">Make Quiz</button>
     </div>
   </div>
 </div>

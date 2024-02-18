@@ -1,3 +1,16 @@
+.body {
+    background: linear-gradient(
+        to right top, 
+        rgb(98, 104, 222) 0%, 
+        rgb(158, 185, 245) 100%);
+    height: auto;    
+}
+.row {
+    background: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    box-shadow: 0 0 8px 0 rgba(75, 75, 75, 0.735);  
+}
 .homepage1 {
     display: flex;
     display: grid;
@@ -7,22 +20,23 @@
     top: 0;
     left: 0;
     right: 0;
-    width: 100%;
     align-items: center;
     justify-content: center;
     padding-top: 100px;
     padding-bottom: 100px;
     background:white
 }
-* {
+.body > * {
     -webkit-user-select: none;
     -webkit-user-drag: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+.col > * {
     animation: moveInBottom 0.7s ease-out;
 }
-.container {
+.body {
     border: 1px solid rgb(215, 215, 215);
 }
 .display-5, .display-6{
