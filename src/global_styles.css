@@ -5,7 +5,10 @@ body {
 main {
   color: white;
 }
-
+.main-page{
+  height: 100%;
+  width: 100%;
+}
 .container-fluid {
   display: flex;
   justify-content: space-between;

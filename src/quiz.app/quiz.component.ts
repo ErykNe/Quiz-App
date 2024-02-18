@@ -12,51 +12,68 @@ import { FormControl } from "@angular/forms";
 })
 
 export class QuizComponent implements OnInit {
-  constructor() {
-
-  }
   ngOnInit() {
-    this.questions = [];
-
-    for (let i = 0; i < Quiz_from_json.length; i++) {
-      const questionData = Quiz_from_json[i];
-      const question = new Question(parseInt(questionData.index_question), questionData.title, questionData.text, questionData.index_correct, questionData.index_question);
-      this.questions.push(question);
-    }
-    return this.questions
+    this.quizes = [];
+    Quiz_from_json.forEach(quizData => {
+      const questions: Question[] = [];
+      quizData.questions.forEach(questionData => {
+        const question = new Question(
+          parseInt(questionData.index_question),
+          questionData.title,
+          questionData.text,
+          questionData.index_correct,
+          questionData.index_question
+        );
+        questions.push(question);
+      });
+      const quiz = new Quiz(quizData.quizName, questions);
+      this.quizes.push(quiz);
+    });
+    return this.quizes
   }
-  questions: Question[] = this.ngOnInit()
+  
+  quizes: Quiz[] = this.ngOnInit();
+  questions: Question[] = []
   userAnswers: String [] = []
+
   public score: number = 0;
   public i: number = 0;
   public confirmed: boolean = false;
+  public quizStarted: boolean = false;
   public quizCompleted: boolean = false;
+
+  chooseQuiz(quiz: Quiz){
+    this.questions = quiz.questions;
+    console.log(this.questions)
+    this.quizStarted = true;
+  }
   assignData(answer: string){
-    this.userAnswers.push(answer)
+    this.userAnswers[this.i] = answer
   }
-  showScore(){
-    let a = 0;
-    this.score++;
-    this.userAnswers.forEach((answer) =>{
-      if(this.questions[a].answers.findIndex(elem => elem == answer) == this.questions[a].index_correct){
-        this.score++;
+  confirmAnswer(form: HTMLElement){
+    const radioButtons = form.querySelectorAll('input[type="radio"]');
+    let anyChecked = false;
+    radioButtons.forEach(radioButton => {
+      if((radioButton as HTMLInputElement).checked == true){
+        anyChecked = true;
       }
-      a++;
-    })
-  }
-  confirmAnswer(){
+    });
+    if(!anyChecked){
+      //give proper alert
+      return
+    }
+      if(this.questions[this.i].answers.findIndex(elem => elem == this.userAnswers[this.i]) == this.questions[this.i].index_correct){
+        //give proper alert
+        this.score++;
+      } else {
+        //give proper alert
+      }
+    this.confirmed = true;
     if(this.i == this.questions.length - 1){
       this.quizCompleted = true;
       this.confirmed = false;
       return
     }
-    this.userAnswers.forEach((answer) =>{
-      if(this.questions[this.i].answers.findIndex(elem => elem == answer) == this.questions[this.i].index_correct){
-        this.score++;
-        
-      }
-    })
-    this.confirmed = true;
   }
   goNext(form: HTMLElement){ 
     const radioButtons = form.querySelectorAll('input[type="radio"]');
@@ -66,8 +83,28 @@ export class QuizComponent implements OnInit {
     this.i++;
     this.confirmed = false;
   }
+  isAnswerCorrect(): boolean {
+    return this.questions[this.i].answers.findIndex(elem => elem == this.userAnswers[this.i]) == this.questions[this.i].index_correct;
+  }
+  getClassForAnswer(answer: string, i: number, confirmed: boolean): string {
+    const isCorrect = this.questions[i].answers.indexOf(answer) === this.questions[i].index_correct;
+    const isAnsweredCorrectly = this.questions[i].answers.findIndex(elem => elem == this.userAnswers[i]) == this.questions[i].index_correct;
+    
+    if (isCorrect && confirmed) {
+      return 'alert alert-success';
+    } else if (!isAnsweredCorrectly && confirmed) {
+      return 'alert alert-danger';
+    } else {
+      return '';
+    }
+  }
 }
-
+export class Quiz{
+  constructor(public quizName: string, public questions: Question[]){
+    this.quizName = quizName;
+    this.questions = questions;
+  }
+}
 export class Question {
   constructor(public numer: number, public title: string, public answers: string[], public index_correct: number, public index_question: string) {
     this.numer = numer

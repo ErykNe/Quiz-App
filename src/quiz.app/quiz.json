@@ -1,26 +1,74 @@
 [
   {
-    "index_question": "1",
-    "title": "1.Czy sterydy szkodza zdrowiu?",
-    "text": ["Tak", "Nie"],
-    "index_correct": 1
+    "quizName": "koszykówka",
+    "questions":
+    [
+      {
+        "index_question": "1",
+        "title": "1.Który z polskich koszykarzy trafił do NBA pierwszy?",
+        "text":["Cezary Trybiański", "Maciej Lampe", "Marcin Gortat"],
+        "index_correct": 0
+      },
+      {
+        "index_question": "2",
+        "title": "2.Michael Jordan został wybrany w 1984 r. w drafcie NBA przez Chicago Bulls. Z którym numerem?",
+        "text":["1", "2", "3"],
+        "index_correct": 2
+      },
+      {
+        "index_question": "3",
+        "title": "3.Ile lat Kobe Bryant grał dla Lakers?",
+        "text":["17", "20", "22"],
+        "index_correct": 1
+      },
+      {
+        "index_question": "4",
+        "title": "4.Z którym numerem Steph Curry został wybrany w drafcie z 2009 roku?",
+        "text":["3", "7", "9"],
+        "index_correct": 1
+      },
+      {
+        "index_question": "5",
+        "title": "5.Który z tych koszykarzy zdobył najwięcej mistrzowskich tytułów?",
+        "text":["Robert Horry", "Michael Jordal", "Lebron James"],
+        "index_correct": 0
+      },
+      {
+        "index_question": "6",
+        "title": "6.Który klub NBA ma najwięcej mistrzowskich tytułów?",
+        "text":["Los Angeles Lakers", "Chicago Bulls", "Boston Celtics"],
+        "index_correct": 2
+      }
+    ]
   },
   {
-    "index_question": "2",
-    "title": "2. Czy sterydy zapewniaja szybki przyrost miesni?",
-    "text": ["Tak", "Nie"],
-    "index_correct": 0
-  },
-  {
-    "index_question": "3",
-    "title": "3. Czy przez sterydy mozna miec depresje?",
-    "text": ["Tak", "Nie"],
-    "index_correct": 1
-  },
-  {
-    "index_question": "4",
-    "title": "Rozwiaz rownanie",
-    "text": ["1", "2","sqrt(2)"],
-    "index_correct": 2
+    "quizName": "sterydy",
+    "questions": 
+    [
+      {
+        "index_question": "1",
+        "title": "1.Czy sterydy szkodza zdrowiu?",
+        "text": ["Tak", "Nie"],
+        "index_correct": 0
+      },
+      {
+        "index_question": "2",
+        "title": "2. Czy sterydy zapewniaja szybki przyrost miesni?",
+        "text": ["Tak", "Nie"],
+        "index_correct": 0
+      },
+      {
+        "index_question": "3",
+        "title": "3. Czy przez sterydy mozna miec depresje?",
+        "text": ["Tak", "Nie"],
+        "index_correct": 0
+      },
+      {
+        "index_question": "4",
+        "title": "Jak uwazasz, czy 16 latek moze brac sterydy",
+        "text": ["Tak", "Nie","Zalezy"],
+        "index_correct": 1
+      }
+    ]
   }
 ]

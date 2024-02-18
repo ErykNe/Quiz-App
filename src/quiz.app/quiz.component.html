@@ -1,20 +1,29 @@
 <div>
   <div class ="row">
-    <div class="col homepage2" *ngIf="!quizCompleted">
+   <div class="container col homepage1" *ngIf="!quizStarted">
+      <p class="display-5 quizesAvailable">Quizzes available:</p>
+      <div class="quizChoice" *ngFor="let quiz of quizes; index as i">
+         <li class="display-7" (click)="chooseQuiz(quiz)"><a href="#">{{quiz.quizName}}</a></li>
+      </div>
+   </div>
+    <div class="col homepage2" *ngIf="quizStarted && !quizCompleted">
       <form #form>
           <p>{{questions[i].title}}</p>
-             <div *ngFor="let answer of questions[i].answers">
-              <input type ="radio" name = {{questions[i].index_question}} (click)="assignData(answer)">
-              <span [ngClass]="{'correct-answer': questions[i].answers.indexOf(answer) === questions[i].index_correct && confirmed}">
-               {{answer}}
-              </span>
+             <div class="question" *ngFor="let answer of questions[i].answers">
+               <div [ngClass]="getClassForAnswer(answer, i, confirmed)">
+                  <input type ="radio" name = {{questions[i].index_question}} (click)="assignData(answer)">
+                  <span>
+                     {{ answer }} <span *ngIf="isAnswerCorrect() && confirmed && answer == userAnswers[i]">- Correct!</span> <span *ngIf="!isAnswerCorrect() && confirmed && answer == userAnswers[i]">- Wrong!</span>
+                  </span>
+               </div>
              </div> 
           <br>   
       </form>
-      <button *ngIf="!confirmed && !quizCompleted" (click)="confirmAnswer()">Confirm</button>
-      <button *ngIf="confirmed && !quizCompleted" (click)="goNext(form)">Next Question</button>
+      <button *ngIf="!confirmed && quizStarted && !quizCompleted" (click)="confirmAnswer(form)">Confirm Answer</button>
+      <button *ngIf="confirmed && quizStarted && !quizCompleted" (click)="goNext(form)">Next Question</button>
    </div>
    <div *ngIf="quizCompleted" class="col homepage2">
       <p>Your score is: {{score}}/{{questions.length}}</p>
+      <button (click)="quizStarted = false; quizCompleted = false; i = 0; score = 0;">Leave</button>
    </div>
 </div>
