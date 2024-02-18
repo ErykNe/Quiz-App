@@ -13,6 +13,11 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
   }
-  title: string = JSONdata.title
-  text: string = " " + JSONdata.text
+  article: Article = new Article(JSONdata.title, JSONdata.text)
+}
+export class Article {
+  constructor(public title: string, public text: string){
+    this.title = title;
+    this.text = text;
+  }
 }

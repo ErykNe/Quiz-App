@@ -59,15 +59,12 @@ export class QuizComponent implements OnInit {
       }
     });
     if(!anyChecked){
-      //give proper alert
+      alert("Please select correct answer for a question.");
       return
     }
-      if(this.questions[this.i].answers.findIndex(elem => elem == this.userAnswers[this.i]) == this.questions[this.i].index_correct){
-        //give proper alert
-        this.score++;
-      } else {
-        //give proper alert
-      }
+    if(this.questions[this.i].answers.findIndex(elem => elem == this.userAnswers[this.i]) == this.questions[this.i].index_correct){
+      this.score++;
+    }
     this.confirmed = true;
     if(this.i == this.questions.length - 1){
       this.quizCompleted = true;

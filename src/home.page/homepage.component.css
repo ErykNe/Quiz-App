@@ -58,7 +58,8 @@
     font-size: 30px;
     text-align: left;
     margin-top: 100px;
-}
+  }
+
 .content {
     animation: moveInBottom 0.7s ease-out;
     color: gray;

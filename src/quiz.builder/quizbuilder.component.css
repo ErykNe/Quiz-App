@@ -2,8 +2,9 @@
     background: linear-gradient(
         to right top, 
         rgb(98, 104, 222) 0%, 
-        rgb(158, 185, 245) 100%);
-    height: auto;    
+        rgb(158, 185, 245) 100%);  
+    background-size: cover;   
+    min-height: 95vh;
 }
 .row {
     background: white;

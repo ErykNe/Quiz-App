@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import quizJSON from '../quiz.app/quiz.json';
 
 @Component({
@@ -79,7 +76,6 @@ export class QuizbuilderComponent implements OnInit {
     return true;
   }
 }
-
 export class Quiz{
   constructor(public quizName: string, public questions: Question[]){
     this.quizName = quizName;
