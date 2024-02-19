@@ -45,13 +45,13 @@
     box-shadow: 0 0 4px 0 rgba(75, 75, 75, 0.735);    
 }
 .title {
-    animation: moveInBottom 0.7s ease-out;
+    animation: moveInBottom 0.5s ease-out;
     color: white;
     font-weight: 400;
     width: 100%;
 }
 .text {
-    animation: moveInBottom 0.7s ease-out;
+    animation: moveInBottom 0.5s ease-out;
     color: white;
     font-weight: 300;
     width: 100%;
@@ -61,16 +61,16 @@
   }
 
 .content {
-    animation: moveInBottom 0.7s ease-out;
+    animation: moveInBottom 0.5s ease-out;
     color: gray;
     font-weight: 200;
 }
 .icon {
-    animation: moveInBottom 0.7s ease-out;
+    animation: moveInBottom 0.5s ease-out;
     margin-left: -20px;
 }
 .icon2 {
-    animation: moveInBottom 0.7s ease-out;
+    animation: moveInBottom 0.5s ease-out;
     padding: 40px;
     width: 200px;
     height: 200px;

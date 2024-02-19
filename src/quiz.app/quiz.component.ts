@@ -50,6 +50,11 @@ export class QuizComponent implements OnInit {
   assignData(answer: string){
     this.userAnswers[this.i] = answer
   }
+  endQuiz(form:HTMLElement){
+      this.quizCompleted = true;
+      this.confirmed = false;
+      return
+  }
   confirmAnswer(form: HTMLElement){
     const radioButtons = form.querySelectorAll('input[type="radio"]');
     let anyChecked = false;
@@ -66,11 +71,6 @@ export class QuizComponent implements OnInit {
       this.score++;
     }
     this.confirmed = true;
-    if(this.i == this.questions.length - 1){
-      this.quizCompleted = true;
-      this.confirmed = false;
-      return
-    }
   }
   goNext(form: HTMLElement){ 
     const radioButtons = form.querySelectorAll('input[type="radio"]');
@@ -93,6 +93,18 @@ export class QuizComponent implements OnInit {
       return 'alert alert-danger';
     } else {
       return '';
+    }
+  }
+  getClassForScore(){
+    let precentage = this.score/this.questions.length * 100 
+    if(precentage < 40){
+      return "text-danger"
+    } else if (precentage >= 40 && precentage < 75){
+      return "text-warning"
+    } else if (precentage >= 75 && precentage != 100){
+      return "text-success"
+    } else {
+      return "text-success font-weight-bold"
     }
   }
 }

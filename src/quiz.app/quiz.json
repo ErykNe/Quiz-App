@@ -30,7 +30,7 @@
       {
         "index_question": "5",
         "title": "5.Który z tych koszykarzy zdobył najwięcej mistrzowskich tytułów?",
-        "text":["Robert Horry", "Michael Jordal", "Lebron James"],
+        "text":["Robert Horry", "Michael Jordan", "Lebron James"],
         "index_correct": 0
       },
       {
@@ -65,9 +65,9 @@
       },
       {
         "index_question": "4",
-        "title": "Jak uwazasz, czy 16 latek moze brac sterydy",
+        "title": "4. Czy przez zażywanie sterydów można zachorować na różne choroby?",
         "text": ["Tak", "Nie","Zalezy"],
-        "index_correct": 1
+        "index_correct": 0
       }
     ]
   }

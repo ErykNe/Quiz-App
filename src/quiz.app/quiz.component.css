@@ -9,9 +9,11 @@
     background:white;
 }
 .row-custom {
+    animation: moveInBottom 0.3s ease-out;
     background: white;
     margin-left: 20%;
     margin-right: 20%;
+    margin-top: 15%;
     box-shadow: 0 0 8px 0 rgba(75, 75, 75, 0.735);  
 }
 .quizesAvailable{
@@ -19,10 +21,10 @@
     margin-bottom: 50px;
     padding-bottom: 20px;
     border-bottom: 1px solid rgb(215, 215, 215);
-    animation: moveInBottom 0.7s ease-out;
+    animation: moveInBottom 0.5s ease-out;
 }
 .quizChoice {
-    animation: moveInBottom 0.7s ease-out;
+    animation: moveInBottom 0.5s ease-out;
 }
 .body {
     background: linear-gradient(
@@ -32,12 +34,46 @@
     background-size: cover;   
     min-height: 95vh;
 }
+.title {
+    font-size: 35px;
+}
+.alert, .alert-success, .alert-danger {
+    padding: auto;
+    display:inline-flexbox;
+}
+.question > div {
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+.score {
+    margin-bottom: 17px;
+    font-size: 29px;
+}
+.niceWords {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 17px;
+}
+* {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+input[type=radio] {
+    border: 0px;
+    width: 25px;
+    height: 20px;
+}
 .homepage2 {
     display: flex;
     display: grid;
     justify-content: center;
     align-items: center;
     text-align: left;
+    padding: 100px;
+    font-size: 27px;
     top: 0;
     left: 0;
     right: 0;

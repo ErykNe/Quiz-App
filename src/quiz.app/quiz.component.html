@@ -11,7 +11,7 @@
          <div class="row-custom">
             <div class="container col homepage2" *ngIf="quizStarted && !quizCompleted">
                <form #form>
-                  <p>{{questions[i].title}}</p>
+                  <p class ="title">{{questions[i].title}}</p>
                      <div class="question" *ngFor="let answer of questions[i].answers">
                        <div [ngClass]="getClassForAnswer(answer, i, confirmed)">
                           <input type ="radio" name = {{questions[i].index_question}} (click)="assignData(answer)">
@@ -23,11 +23,14 @@
                   <br>   
               </form>
               <button class="btn btn-primary" *ngIf="!confirmed && quizStarted && !quizCompleted" (click)="confirmAnswer(form)">Confirm Answer</button>
-              <button class="btn btn-primary" *ngIf="confirmed && quizStarted && !quizCompleted" (click)="goNext(form)">Next Question</button>
+              <button class="btn btn-primary" *ngIf="confirmed && quizStarted && !quizCompleted && i == questions.length - 1" (click)="endQuiz(form)">End Quiz</button>
+              <button class="btn btn-primary" *ngIf="confirmed && quizStarted && !quizCompleted && i != questions.length - 1" (click)="goNext(form)">Next Question</button>
             </div>
             <div *ngIf="quizCompleted" class="container col homepage2">
-               <p>Your score is: {{score}}/{{questions.length}}</p>
-               <button (click)="quizStarted = false; quizCompleted = false; i = 0; score = 0;">Leave</button>
+               <p class="score">Your score is: <a [ngClass]="getClassForScore()">{{score}}/{{questions.length}}</a></p>
+               <p class="niceWords" *ngIf="score/questions.length * 100 >= 75 && score/questions.length *100 < 100">You did very well!</p>
+               <p class="niceWords" *ngIf="score/questions.length * 100 == 100">You did absolutely amazing!</p>
+               <button class="btn btn-primary" (click)="quizStarted = false; quizCompleted = false; i = 0; score = 0;">Leave</button>
             </div>
          </div>
       </div>
