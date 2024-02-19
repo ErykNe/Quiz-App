@@ -14,13 +14,13 @@ export class QuizbuilderComponent implements OnInit {
   quizName: string = "";
   ngOnInit(){
     this.questions = [];
-    this.questions.push(new Question("1","", [""], []));
+    this.questions.push(new Question("1","", [""], -1));
     return this.questions;
   }
   questions: Question[] = this.ngOnInit();
 
   addQuestion() {
-    this.questions.push(new Question((this.questions.length + 1).toString(),"", [""], []));
+    this.questions.push(new Question((this.questions.length + 1).toString(),"", [""], -1));
   }
 
   removeQuestion(index: number) {
@@ -46,7 +46,7 @@ export class QuizbuilderComponent implements OnInit {
         index_question: question.index_question, 
         title: question.title,
         text: question.text,
-        index_correct: question.index_correct[0] 
+        index_correct: question.index_correct 
       };
     });
     let newQuiz = {
@@ -64,7 +64,7 @@ export class QuizbuilderComponent implements OnInit {
   }
   allInputsFilled(): boolean {
     for (let question of this.questions) {
-      if (!question.title || question.text.length === 0 || question.index_correct.length === 0) {
+      if (!question.title || question.text.length === 0 || question.index_correct == -1) {
         return false;
       }
       for (let answer of question.text) {
@@ -83,5 +83,5 @@ export class Quiz{
   }
 }
 export class Question {
-  constructor(public index_question: string, public title: string, public text: string[], public index_correct: number[]) {}
+  constructor(public index_question: string, public title: string, public text: string[], public index_correct: number) {}
 }

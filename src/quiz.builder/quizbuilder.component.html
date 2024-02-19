@@ -12,7 +12,7 @@
           <p class="answersStyle">Answers:</p>
           <div class="answers" *ngFor="let answer of question.text; let j = index; trackBy: trackByFn">
             <div class="btn-group">
-              <input type="radio" name="{{i}}" (click)="this.questions[i].index_correct.push(j)">
+              <input type="radio" name="{{i}}" (click)="question.index_correct = j">
               <input type="text" [(ngModel)]="questions[i].text[j]">
               <button class="btn btn-primary" (click)="removeAnswer(i, j)">Remove Answer</button> 
             </div>
