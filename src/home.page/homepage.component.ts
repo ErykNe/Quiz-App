@@ -18,6 +18,6 @@ export class HomepageComponent implements OnInit {
 export class Article {
   constructor(public title: string, public text: string){
     this.title = title;
-    this.text = text;
+    this.text = " " + text;
   }
 }
