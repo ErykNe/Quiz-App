@@ -6,24 +6,30 @@
          <li class="display-7" (click)="chooseQuiz(quiz)"><a href="#">{{quiz.quizName}}</a></li>
       </div>
    </div>
-    <div class="col homepage2" *ngIf="quizStarted && !quizCompleted">
-      <form #form>
-          <p>{{questions[i].title}}</p>
-             <div class="question" *ngFor="let answer of questions[i].answers">
-               <div [ngClass]="getClassForAnswer(answer, i, confirmed)">
-                  <input type ="radio" name = {{questions[i].index_question}} (click)="assignData(answer)">
-                  <span>
-                     {{ answer }} <span *ngIf="isAnswerCorrect() && confirmed && answer == userAnswers[i]">- Correct!</span> <span *ngIf="!isAnswerCorrect() && confirmed && answer == userAnswers[i]">- Wrong!</span>
-                  </span>
-               </div>
-             </div> 
-          <br>   
-      </form>
-      <button *ngIf="!confirmed && quizStarted && !quizCompleted" (click)="confirmAnswer(form)">Confirm Answer</button>
-      <button *ngIf="confirmed && quizStarted && !quizCompleted" (click)="goNext(form)">Next Question</button>
-   </div>
-   <div *ngIf="quizCompleted" class="col homepage2">
-      <p>Your score is: {{score}}/{{questions.length}}</p>
-      <button (click)="quizStarted = false; quizCompleted = false; i = 0; score = 0;">Leave</button>
+   <div class="body" *ngIf="quizStarted">
+      <div class="container">
+         <div class="row-custom">
+            <div class="container col homepage2" *ngIf="quizStarted && !quizCompleted">
+               <form #form>
+                  <p>{{questions[i].title}}</p>
+                     <div class="question" *ngFor="let answer of questions[i].answers">
+                       <div [ngClass]="getClassForAnswer(answer, i, confirmed)">
+                          <input type ="radio" name = {{questions[i].index_question}} (click)="assignData(answer)">
+                          <span>
+                             {{ answer }} <span *ngIf="isAnswerCorrect() && confirmed && answer == userAnswers[i]">- Correct!</span> <span *ngIf="!isAnswerCorrect() && confirmed && answer == userAnswers[i]">- Wrong!</span>
+                          </span>
+                       </div>
+                     </div> 
+                  <br>   
+              </form>
+              <button class="btn btn-primary" *ngIf="!confirmed && quizStarted && !quizCompleted" (click)="confirmAnswer(form)">Confirm Answer</button>
+              <button class="btn btn-primary" *ngIf="confirmed && quizStarted && !quizCompleted" (click)="goNext(form)">Next Question</button>
+            </div>
+            <div *ngIf="quizCompleted" class="container col homepage2">
+               <p>Your score is: {{score}}/{{questions.length}}</p>
+               <button (click)="quizStarted = false; quizCompleted = false; i = 0; score = 0;">Leave</button>
+            </div>
+         </div>
+      </div>
    </div>
 </div>

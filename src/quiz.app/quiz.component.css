@@ -8,6 +8,12 @@
     padding: 120px;
     background:white;
 }
+.row-custom {
+    background: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    box-shadow: 0 0 8px 0 rgba(75, 75, 75, 0.735);  
+}
 .quizesAvailable{
     margin-left: -20px;
     margin-bottom: 50px;
@@ -18,21 +24,28 @@
 .quizChoice {
     animation: moveInBottom 0.7s ease-out;
 }
+.body {
+    background: linear-gradient(
+        to right top, 
+        rgb(98, 104, 222) 0%, 
+        rgb(158, 185, 245) 100%);  
+    background-size: cover;   
+    min-height: 95vh;
+}
 .homepage2 {
+    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     text-align: left;
-    padding-top: 20%;
-    padding-bottom: 19vw;
-    padding-left: 35%;
-    padding-right: 20%;
-    background-color: #F4F8FB;
-    font-size: 40px;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background:white
 }
 .alert {
  padding: auto;
